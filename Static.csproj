@@ -42,17 +42,14 @@
     </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <None Include=".editorconfig" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="err\StaticError.cs">
+    <Compile Include="error\Error.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="err\StaticError.Designer.cs">
-      <DependentUpon>StaticError.cs</DependentUpon>
+    <Compile Include="error\Error.Designer.cs">
+      <DependentUpon>Error.cs</DependentUpon>
     </Compile>
-    <Compile Include="resc\Resource.cs" />
-    <Compile Include="stat\Static.cs" />
+    <Compile Include="stat\Resource.cs" />
+    <Compile Include="stat\Application.cs" />
     <Compile Include="verify\Validate.cs" />
     <Compile Include="verify\Verify.cs" />
   </ItemGroup>
@@ -84,16 +81,22 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include="BudgetStatic.sln.DotSettings.user" />
+    <Content Include="etc\logo.ico" />
     <Content Include="lib\Syncfusion.Shared.Base.dll" />
     <Content Include="lib\Syncfusion.Shared.Windows.dll" />
     <Content Include="lib\Syncfusion.Tools.Windows.dll" />
-    <Content Include=".gitignore" />
-    <Content Include="BudgetStatic.sln.DotSettings.user" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="err\StaticError.resx">
-      <DependentUpon>StaticError.cs</DependentUpon>
+    <EmbeddedResource Include="error\Error.resx">
+      <DependentUpon>Error.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".editorconfig" />
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -9,7 +9,6 @@ namespace BudgetExecution
     // ******************************************************************************************************************************
 
     using System;
-    using System;
     using System.Collections.Generic;
     using System.Collections.Specialized;
     using System.Data;
@@ -26,7 +25,7 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     [ SuppressMessage( "ReSharper", "MemberCanBeInternal" ) ]
     [ SuppressMessage( "ReSharper", "ConvertSwitchStatementToSwitchExpression" ) ]
-    public static class Static
+    public static class Application
     {
         // ***************************************************************************************************************************
         // ****************************************************     FIELDS    ********************************************************
@@ -237,7 +236,7 @@ namespace BudgetExecution
         /// <param name="ex">The ex.</param>
         public static void Fail( Exception ex )
         {
-            var error = new StaticError( ex );
+            var error = new Error( ex );
             error?.SetText();
             error?.ShowDialog();
         }
