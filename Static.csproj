@@ -42,12 +42,6 @@
     </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="stat\Resource.cs" />
-    <Compile Include="stat\Application.cs" />
-    <Compile Include="verify\Validate.cs" />
-    <Compile Include="verify\Verify.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="BudgetBadger">
       <HintPath>..\Badger\bin\Debug\BudgetBadger.dll</HintPath>
     </Reference>
@@ -86,6 +80,13 @@
   <ItemGroup>
     <None Include=".editorconfig" />
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Resource.cs" />
+    <Compile Include="Validate.cs" />
+    <Compile Include="Verify.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

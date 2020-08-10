@@ -1,6 +1,6 @@
-﻿// <copyright file = "Static.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿// // <copyright file = "Application.cs" company = "Terry D. Eppler">
+// // Copyright (c) Terry D. Eppler. All rights reserved.
+// // </copyright>
 
 namespace BudgetExecution
 {
@@ -236,7 +236,7 @@ namespace BudgetExecution
         /// <param name="ex">The ex.</param>
         public static void Fail( Exception ex )
         {
-            var error = new Error( ex );
+            using var error = new Error( ex );
             error?.SetText();
             error?.ShowDialog();
         }

@@ -1,6 +1,6 @@
-﻿// <copyright file = "Verify.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
-// </copyright>
+﻿// // <copyright file = "Verify.cs" company = "Terry D. Eppler">
+// // Copyright (c) Terry D. Eppler. All rights reserved.
+// // </copyright>
 
 namespace BudgetExecution
 {
@@ -31,8 +31,7 @@ namespace BudgetExecution
         /// <typeparam name="T"></typeparam>
         /// <param name="input">The input.</param>
         /// <returns></returns>
-        public static bool Table<T>( T input )
-            where T : IListSource
+        public static bool Table<T>( T input ) where T : IListSource
         {
             if( !input?.ContainsListCollection == true )
             {
@@ -51,8 +50,7 @@ namespace BudgetExecution
         /// <typeparam name="T"></typeparam>
         /// <param name="input">The input.</param>
         /// <returns></returns>
-        public static bool Row<T>( T input )
-            where T : DataRow
+        public static bool Row<T>( T input ) where T : DataRow
         {
             if( !input?.ItemArray?.Any() == true )
             {
@@ -89,8 +87,7 @@ namespace BudgetExecution
         /// <typeparam name="T"></typeparam>
         /// <param name="input">The input.</param>
         /// <returns></returns>
-        public static bool Rows<T>( T input ) 
-            where T : IEnumerable<DataRow>
+        public static bool Rows<T>( T input ) where T : IEnumerable<DataRow>
         {
             if( !input?.Any() == true )
             {
@@ -181,8 +178,7 @@ namespace BudgetExecution
         /// <typeparam name="T"></typeparam>
         /// <param name="input">The input.</param>
         /// <returns></returns>
-        public static bool Map<T>( T input ) 
-            where T : IDictionary<string, object>
+        public static bool Map<T>( T input ) where T : IDictionary<string, object>
         {
             if( !input?.Any() == true )
             {
@@ -203,8 +199,7 @@ namespace BudgetExecution
         /// <returns>
         ///   <c>true</c> if the specified input is bindable; otherwise, <c>false</c>.
         /// </returns>
-        public static bool IsBindable<T>( T input )
-            where T : IBindingList
+        public static bool IsBindable<T>( T input ) where T : IBindingList
         {
             if( input.Count > 0 )
             {
