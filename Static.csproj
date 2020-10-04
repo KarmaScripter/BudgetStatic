@@ -43,16 +43,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BudgetBadger">
-      <HintPath>..\Badger\bin\Debug\BudgetBadger.dll</HintPath>
+      <HintPath>..\BudgetBadger\bin\Debug\BudgetBadger.dll</HintPath>
     </Reference>
     <Reference Include="BudgetEnumerations">
-      <HintPath>..\Enumerations\bin\Debug\BudgetEnumerations.dll</HintPath>
+      <HintPath>..\BudgetBadger\bin\Debug\BudgetEnumerations.dll</HintPath>
     </Reference>
     <Reference Include="BudgetExtensions">
-      <HintPath>..\Extensions\bin\Debug\BudgetExtensions.dll</HintPath>
+      <HintPath>..\BudgetBadger\bin\Debug\BudgetExtensions.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Shared.Base">
-      <HintPath>lib\Syncfusion.Shared.Base.dll</HintPath>
+      <HintPath>..\BudgetBadger\bin\Debug\Syncfusion.Shared.Base.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -71,8 +71,6 @@
   <ItemGroup>
     <Content Include=".gitattributes" />
     <Content Include=".gitignore" />
-    <Content Include="BudgetStatic.sln.DotSettings.user" />
-    <Content Include="etc\logo.ico" />
     <Content Include="lib\Syncfusion.Shared.Base.dll" />
     <Content Include="lib\Syncfusion.Shared.Windows.dll" />
     <Content Include="lib\Syncfusion.Tools.Windows.dll" />
@@ -80,6 +78,7 @@
   <ItemGroup>
     <None Include=".editorconfig" />
     <None Include="App.config" />
+    <None Include="BudgetExecution.DotSettings" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application.cs" />
@@ -87,6 +86,9 @@
     <Compile Include="Resource.cs" />
     <Compile Include="Validate.cs" />
     <Compile Include="Verify.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="etc\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

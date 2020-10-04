@@ -37,122 +37,122 @@ namespace BudgetExecution
         /// <summary>
         /// The object class icons
         /// </summary>
-        public static readonly string ObjectClassIcons = Resource.Settings[ "ObjectClassIcons" ];
+        public static readonly string ObjectClassIcons = Settings[ "ObjectClassIcons" ];
 
         /// <summary>
         /// The summary
         /// </summary>
-        public static readonly string Summary = Resource.Settings[ "SummaryImages" ];
+        public static readonly string Summary = Settings[ "SummaryImages" ];
 
         /// <summary>
         /// The funds
         /// </summary>
-        public static readonly string Funds = Resource.Settings[ "FundImages" ];
+        public static readonly string Funds = Settings[ "FundImages" ];
 
         /// <summary>
         /// The divisions
         /// </summary>
-        public static readonly string Divisions = Resource.Settings[ "DivisionImages" ];
+        public static readonly string Divisions = Settings[ "DivisionImages" ];
 
         /// <summary>
         /// The databases
         /// </summary>
-        public static readonly string Databases = Resource.Settings[ "Database" ];
+        public static readonly string Databases = Settings[ "Database" ];
 
         /// <summary>
         /// The data icons
         /// </summary>
-        public static readonly string DataIcons = Resource.Settings[ "DataIcons" ];
+        public static readonly string DataIcons = Settings[ "DataIcons" ];
 
         /// <summary>
         /// The outlays
         /// </summary>
-        public static readonly string Outlays = Resource.Settings[ "OutlayImages" ];
+        public static readonly string Outlays = Settings[ "OutlayImages" ];
 
         /// <summary>
         /// The office icons
         /// </summary>
-        public static readonly string OfficeIcons = Resource.Settings[ "OfficeIcons" ];
+        public static readonly string OfficeIcons = Settings[ "OfficeIcons" ];
 
         /// <summary>
         /// The navigation icons
         /// </summary>
-        public static readonly string NavigationIcons = Resource.Settings[ "NavigationIcons" ];
+        public static readonly string NavigationIcons = Settings[ "NavigationIcons" ];
 
         /// <summary>
         /// The codec icons
         /// </summary>
-        public static readonly string CodecIcons = Resource.Settings[ "CodecIcons" ];
+        public static readonly string CodecIcons = Settings[ "CodecIcons" ];
 
         /// <summary>
         /// The outlay icons
         /// </summary>
-        public static readonly string OutlayIcons = Resource.Settings[ "OutlayIcons" ];
+        public static readonly string OutlayIcons = Settings[ "OutlayIcons" ];
 
         /// <summary>
         /// The file icons
         /// </summary>
-        public static readonly string FileIcons = Resource.Settings[ "FileIcons" ];
+        public static readonly string FileIcons = Settings[ "FileIcons" ];
 
         /// <summary>
         /// The object class images
         /// </summary>
-        public static readonly string ObjectClassImages = Resource.Settings[ "ObjectClassImages" ];
+        public static readonly string ObjectClassImages = Settings[ "ObjectClassImages" ];
 
         /// <summary>
         /// The provider icons
         /// </summary>
-        public static readonly string ProviderIcons = Resource.Settings[ "ProviderIcons" ];
+        public static readonly string ProviderIcons = Settings[ "ProviderIcons" ];
 
         /// <summary>
         /// The math icons
         /// </summary>
-        public static readonly string MathIcons = Resource.Settings[ "MathIcons" ];
+        public static readonly string MathIcons = Settings[ "MathIcons" ];
 
         /// <summary>
         /// The interface icons
         /// </summary>
-        public static readonly string InterfaceIcons = Resource.Settings[ "InterfaceIcons" ];
+        public static readonly string InterfaceIcons = Settings[ "InterfaceIcons" ];
 
         /// <summary>
         /// The folder icons
         /// </summary>
-        public static readonly string FolderIcons = Resource.Settings[ "FolderIcons" ];
+        public static readonly string FolderIcons = Settings[ "FolderIcons" ];
 
         /// <summary>
         /// The division caption
         /// </summary>
-        public static readonly string DivisionCaption = Resource.Settings[ "DivisionCaption" ];
+        public static readonly string DivisionCaption = Settings[ "DivisionCaption" ];
 
         /// <summary>
         /// The division icons
         /// </summary>
-        public static readonly string DivisionIcons = Resource.Settings[ "DivisionIcons" ];
+        public static readonly string DivisionIcons = Settings[ "DivisionIcons" ];
 
         /// <summary>
         /// The division text icon
         /// </summary>
-        public static readonly string DivisionTextIcon = Resource.Settings[ "DivisionTextIcon" ];
+        public static readonly string DivisionTextIcon = Settings[ "DivisionTextIcon" ];
 
         /// <summary>
         /// The main form images
         /// </summary>
-        public static readonly string MainFormImages = Resource.Settings[ "MainFormImages" ];
+        public static readonly string MainFormImages = Settings[ "MainFormImages" ];
 
         /// <summary>
         /// The execution images
         /// </summary>
-        public static readonly string ExecutionImages = Resource.Settings[ "ExecutionImages" ];
+        public static readonly string ExecutionImages = Settings[ "ExecutionImages" ];
 
         /// <summary>
         /// The execution icons
         /// </summary>
-        public static readonly string ExecutionIcons = Resource.Settings[ "ExecutionIcons" ];
+        public static readonly string ExecutionIcons = Settings[ "ExecutionIcons" ];
 
         /// <summary>
         /// The tool bar
         /// </summary>
-        public static readonly string ToolBar = Resource.Settings[ "ToolBar" ];
+        public static readonly string ToolBar = Settings[ "ToolBar" ];
 
         // ***************************************************************************************************************************
         // ****************************************         DataSources       ********************************************************
