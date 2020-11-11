@@ -4,38 +4,35 @@
 
 namespace BudgetExecution
 {
-    // ******************************************************************************************************************************
-    // ******************************************************   ASSEMBLIES   ********************************************************
-    // ******************************************************************************************************************************
-
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
+    using System.Configuration;
     using System.Data;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
+    using System.Windows.Interop;
 
     /// <summary>
     /// 
     /// </summary>
+    /// <seealso cref="BudgetExecution.Validate" />
     [ SuppressMessage( "ReSharper", "MemberCanBeInternal" ) ]
+    [ SuppressMessage( "ReSharper", "ConvertToConstant.Local" ) ]
     public class Verify : Validate
     {
-        // ***************************************************************************************************************************
-        // ****************************************************    METHODS    ********************************************************
-        // ***************************************************************************************************************************
-
         /// <summary>
-        /// Datas the specified input.
+        /// Tables the specified input.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="input">The input.</param>
+        /// <param name="data">The input.</param>
         /// <returns></returns>
-        public static bool Table<T>( T input ) where T : IListSource
+        public static bool Table<T>( T data )
+            where T : IListSource
         {
-            if( !input?.ContainsListCollection == true )
+            if( !data?.ContainsListCollection == true )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ IListSource data ] input argument!" ) );
                 return false;
             }
             else
@@ -48,13 +45,14 @@ namespace BudgetExecution
         /// Rows the specified input.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="input">The input.</param>
+        /// <param name="data">The input.</param>
         /// <returns></returns>
-        public static bool Row<T>( T input ) where T : DataRow
+        public static bool Row<T>( T data )
+            where T : DataRow
         {
-            if( !input?.ItemArray?.Any() == true )
+            if( !data?.ItemArray?.Any() == true )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ DataRow data ] input argument!" ) );
                 return false;
             }
             else
@@ -72,7 +70,7 @@ namespace BudgetExecution
         {
             if( string.IsNullOrEmpty( input?.ToString() ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify argument!" ) );
                 return false;
             }
             else
@@ -82,16 +80,17 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Inputs the specified input.
+        /// Rowses the specified input.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="input">The input.</param>
+        /// <param name="data">The input.</param>
         /// <returns></returns>
-        public static bool Rows<T>( T input ) where T : IEnumerable<DataRow>
+        public static bool Rows<T>( T data )
+            where T : IEnumerable<DataRow>
         {
-            if( !input?.Any() == true )
+            if( !data?.Any() == true )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ IEnumerable<DataRow> data ] input argument!" ) );
                 return false;
             }
             else
@@ -101,15 +100,15 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Maps the specified map.
+        /// Maps the specified object.
         /// </summary>
-        /// <param name="obj">The map.</param>
+        /// <param name="obj">The object.</param>
         /// <returns></returns>
         public static bool Map( object obj )
         {
             if( obj != null )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify argument!" ) );
                 return false;
             }
             else
@@ -119,15 +118,15 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Keys the specified key.
+        /// Keys the specified object.
         /// </summary>
-        /// <param name = "obj" > </param>
+        /// <param name="obj">The object.</param>
         /// <returns></returns>
         public static bool Key( object obj )
         {
             if( obj != null )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ object ] input argument!" ) );
                 return false;
             }
             else
@@ -137,15 +136,15 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Amounts the specified amount.
+        /// Amounts the specified object.
         /// </summary>
-        /// <param name = "obj" > </param>
+        /// <param name="data">The object.</param>
         /// <returns></returns>
-        public static bool Amount( object obj )
+        public static bool Amount( object data )
         {
-            if( obj != null )
+            if( data != null )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ Amount data ] input argument!" ) );
                 return false;
             }
             else
@@ -155,15 +154,15 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Elements the specified element.
+        /// Elements the specified object.
         /// </summary>
-        /// <param name = "obj" > </param>
+        /// <param name="data">The object.</param>
         /// <returns></returns>
-        public static bool Element( object obj )
+        public static bool Element( object data )
         {
-            if( obj != null )
+            if( data != null )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ Element data ] input argument!" ) );
                 return false;
             }
             else
@@ -176,13 +175,14 @@ namespace BudgetExecution
         /// Maps the specified input.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="input">The input.</param>
+        /// <param name="data">The input.</param>
         /// <returns></returns>
-        public static bool Map<T>( T input ) where T : IDictionary<string, object>
+        public static bool Map<T>( T data )
+            where T : IDictionary<string, object>
         {
-            if( !input?.Any() == true )
+            if( !data?.Any() == true )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ IDictionary<string, object> data ] input argument!" ) );
                 return false;
             }
             else
@@ -195,15 +195,16 @@ namespace BudgetExecution
         /// Determines whether the specified input is bindable.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="input">The input.</param>
+        /// <param name="data">The input.</param>
         /// <returns>
         ///   <c>true</c> if the specified input is bindable; otherwise, <c>false</c>.
         /// </returns>
-        public static bool IsBindable<T>( T input ) where T : IBindingList
+        public static bool IsBindable<T>( T data )
+            where T : IBindingList
         {
-            if( input.Count > 0 )
+            if( data?.Count > 0 == false )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ IBindingList data ] input argument!" ) );
                 return false;
             }
             else
@@ -216,13 +217,13 @@ namespace BudgetExecution
         /// Sequences the specified input.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="input">The input.</param>
+        /// <param name="data">The input.</param>
         /// <returns></returns>
-        public static bool Sequence<T>( IEnumerable<T> input )
+        public static bool Sequence<T>( IEnumerable<T> data )
         {
-            if( input?.Any() == true )
+            if( data?.Any() == true )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ IEnumerable<T> data ] input argument!" ) );
                 return false;
             }
             else
@@ -232,21 +233,17 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Determines whether [is image format] [the specified imageformat].
+        /// Images the format.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="imageformat">The imageformat.</param>
-        /// <returns>
-        /// <c> true </c>
-        /// if [is image format] [the specified imageformat]; otherwise,
-        /// <c> false </c>
-        /// .
-        /// </returns>
-        public static bool ImageFormat<T>( T imageformat ) where T : struct
+        /// <returns></returns>
+        public static bool ImageFormat<T>( T imageformat )
+            where T : struct
         {
             if( !Enum.IsDefined( typeof( ImageFormat ), imageformat ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum ImageFormat ] input argument!" ) );
                 return false;
             }
             else
@@ -256,21 +253,17 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Determines whether [is image size] [the specified imagesize].
+        /// Images the size.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="imagesize">The imagesize.</param>
-        /// <returns>
-        /// <c> true </c>
-        /// if [is image size] [the specified imagesize]; otherwise,
-        /// <c> false </c>
-        /// .
-        /// </returns>
-        public static bool ImageSize<T>( T imagesize ) where T : struct
+        /// <returns></returns>
+        public static bool ImageSize<T>( T imagesize )
+            where T : struct
         {
             if( !Enum.IsDefined( typeof( ImageSizer ), imagesize ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum ImageSizer ] input argument!" ) );
                 return false;
             }
             else
@@ -280,21 +273,17 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Determines whether [is transfer type] [the specified transfer].
+        /// Transfers the type.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="transfer">The transfer.</param>
-        /// <returns>
-        /// <c> true </c>
-        /// if [is transfer type] [the specified transfer]; otherwise,
-        /// <c> false </c>
-        /// .
-        /// </returns>
-        public static bool TransferType<T>( T transfer ) where T : struct
+        /// <returns></returns>
+        public static bool TransferType<T>( T transfer )
+            where T : struct
         {
             if( !Enum.IsDefined( typeof( TransferType ), transfer ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum Source ] input argument!" ) );
                 return false;
             }
             else
@@ -309,19 +298,17 @@ namespace BudgetExecution
         /// <typeparam name="T"></typeparam>
         /// <param name="source">The source.</param>
         /// <returns>
-        /// <c> true </c>
-        /// if the specified source is authority; otherwise,
-        /// <c> false </c>
-        /// .
+        ///   <c>true</c> if the specified source is authority; otherwise, <c>false</c>.
         /// </returns>
-        public static bool IsAuthority<T>( T source ) where T : struct
+        public static bool IsAuthority<T>( T source )
+            where T : struct
         {
             var input = (Source)Enum.Parse( typeof( Source ), source.ToString() );
 
             if( !Enum.IsDefined( typeof( Source ), source )
                 || !Resource.AuthoritySources.Contains( input ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum Source ] input argument!" ) );
                 return false;
             }
             else
@@ -336,19 +323,17 @@ namespace BudgetExecution
         /// <typeparam name="T"></typeparam>
         /// <param name="source">The source.</param>
         /// <returns>
-        /// <c> true </c>
-        /// if the specified source is division; otherwise,
-        /// <c> false </c>
-        /// .
+        ///   <c>true</c> if the specified source is division; otherwise, <c>false</c>.
         /// </returns>
-        public static bool IsDivision<T>( T source ) where T : struct
+        public static bool IsDivision<T>( T source )
+            where T : struct
         {
             var input = (Source)Enum.Parse( typeof( Source ), source.ToString() );
 
             if( !Enum.IsDefined( typeof( Source ), source )
                 || !Resource.DivisionSources.Contains( input ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum Source ] input argument!" ) );
                 return false;
             }
             else
@@ -363,12 +348,10 @@ namespace BudgetExecution
         /// <typeparam name="T"></typeparam>
         /// <param name="source">The source.</param>
         /// <returns>
-        /// <c> true </c>
-        /// if the specified source is supplemental; otherwise,
-        /// <c> false </c>
-        /// .
+        ///   <c>true</c> if the specified source is supplemental; otherwise, <c>false</c>.
         /// </returns>
-        public static bool IsSupplemental<T>( T source ) where T : struct
+        public static bool IsSupplemental<T>( T source )
+            where T : struct
         {
             if( Enum.IsDefined( typeof( Source ), source ) )
             {
@@ -377,7 +360,7 @@ namespace BudgetExecution
             }
             else
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum Source ] input argument!" ) );
                 return false;
             }
         }
@@ -388,16 +371,14 @@ namespace BudgetExecution
         /// <typeparam name="T"></typeparam>
         /// <param name="source">The source.</param>
         /// <returns>
-        /// <c> true </c>
-        /// if the specified source is outlay; otherwise,
-        /// <c> false </c>
-        /// .
+        ///   <c>true</c> if the specified source is outlay; otherwise, <c>false</c>.
         /// </returns>
-        public static bool IsOutlay<T>( T source ) where T : struct
+        public static bool IsOutlay<T>( T source )
+            where T : struct
         {
             if( !Enum.IsDefined( typeof( Source ), source ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum Source ] input argument!" ) );
                 return false;
             }
             else
@@ -407,21 +388,17 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Determines whether [is date time] [the specified date].
+        /// Dates the time.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="date">The date.</param>
-        /// <returns>
-        /// <c> true </c>
-        /// if [is date time] [the specified date]; otherwise,
-        /// <c> false </c>
-        /// .
-        /// </returns>
-        public static bool DateTime<T>( T date ) where T : struct
+        /// <returns></returns>
+        public static bool DateTime<T>( T date )
+            where T : struct
         {
             if( !System.DateTime.TryParse( date.ToString(), out _ ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ DateTime date ] input argument!" ) );
                 return false;
             }
             else
@@ -436,11 +413,12 @@ namespace BudgetExecution
         /// <typeparam name="T"></typeparam>
         /// <param name="date">The date.</param>
         /// <returns></returns>
-        public static bool Date<T>( T date ) where T : struct
+        public static bool Date<T>( T date )
+            where T : struct
         {
             if( !Enum.IsDefined( typeof( Date ), date ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum Date ] input argument" ) );
                 return false;
             }
             else
@@ -450,19 +428,15 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Determines whether [is time data] [the specified date].
+        /// Times the specified object.
         /// </summary>
-        /// <returns>
-        /// <c> true </c>
-        /// if [is time data] [the specified date]; otherwise,
-        /// <c> false </c>
-        /// .
-        /// </returns>
+        /// <param name="obj">The object.</param>
+        /// <returns></returns>
         public static bool Time( object obj )
         {
             if( obj != null )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ struct Time ] input argument!" ) );
                 return false;
             }
             else
@@ -472,7 +446,7 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Nots the null.
+        /// References the specified input.
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns></returns>
@@ -480,7 +454,7 @@ namespace BudgetExecution
         {
             if( input == null )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ object input ] input argument!" ) );
                 return false;
             }
             else

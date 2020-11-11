@@ -35,11 +35,6 @@ namespace BudgetExecution
         // ***************************************************************************************************************************
 
         /// <summary>
-        /// The object class icons
-        /// </summary>
-        public static readonly string ObjectClassIcons = Settings[ "ObjectClassIcons" ];
-
-        /// <summary>
         /// The summary
         /// </summary>
         public static readonly string Summary = Settings[ "SummaryImages" ];
@@ -47,12 +42,7 @@ namespace BudgetExecution
         /// <summary>
         /// The funds
         /// </summary>
-        public static readonly string Funds = Settings[ "FundImages" ];
-
-        /// <summary>
-        /// The divisions
-        /// </summary>
-        public static readonly string Divisions = Settings[ "DivisionImages" ];
+        public static readonly string FundImages = Settings[ "FundImages" ];
 
         /// <summary>
         /// The databases
@@ -62,37 +52,32 @@ namespace BudgetExecution
         /// <summary>
         /// The data icons
         /// </summary>
-        public static readonly string DataIcons = Settings[ "DataIcons" ];
-
-        /// <summary>
-        /// The outlays
-        /// </summary>
-        public static readonly string Outlays = Settings[ "OutlayImages" ];
+        public static readonly string DataImages = Settings[ "DataImages" ];
 
         /// <summary>
         /// The office icons
         /// </summary>
-        public static readonly string OfficeIcons = Settings[ "OfficeIcons" ];
+        public static readonly string OfficeImages = Settings[ "OfficeImages" ];
 
         /// <summary>
         /// The navigation icons
         /// </summary>
-        public static readonly string NavigationIcons = Settings[ "NavigationIcons" ];
+        public static readonly string NavigationImages = Settings[ "NavigationImages" ];
 
         /// <summary>
         /// The codec icons
         /// </summary>
-        public static readonly string CodecIcons = Settings[ "CodecIcons" ];
+        public static readonly string CodecImages = Settings[ "CodecImages" ];
 
         /// <summary>
         /// The outlay icons
         /// </summary>
-        public static readonly string OutlayIcons = Settings[ "OutlayIcons" ];
+        public static readonly string OutlayImages = Settings[ "OutlayImages" ];
 
         /// <summary>
         /// The file icons
         /// </summary>
-        public static readonly string FileIcons = Settings[ "FileIcons" ];
+        public static readonly string FileImages = Settings[ "FileImages" ];
 
         /// <summary>
         /// The object class images
@@ -102,22 +87,22 @@ namespace BudgetExecution
         /// <summary>
         /// The provider icons
         /// </summary>
-        public static readonly string ProviderIcons = Settings[ "ProviderIcons" ];
+        public static readonly string ProviderImages = Settings[ "ProviderImages" ];
 
         /// <summary>
         /// The math icons
         /// </summary>
-        public static readonly string MathIcons = Settings[ "MathIcons" ];
+        public static readonly string MathImages = Settings[ "MathImages" ];
 
         /// <summary>
         /// The interface icons
         /// </summary>
-        public static readonly string InterfaceIcons = Settings[ "InterfaceIcons" ];
+        public static readonly string InterfaceImages = Settings[ "InterfaceImages" ];
 
         /// <summary>
         /// The folder icons
         /// </summary>
-        public static readonly string FolderIcons = Settings[ "FolderIcons" ];
+        public static readonly string FolderImages = Settings[ "FolderImages" ];
 
         /// <summary>
         /// The division caption
@@ -127,7 +112,7 @@ namespace BudgetExecution
         /// <summary>
         /// The division icons
         /// </summary>
-        public static readonly string DivisionIcons = Settings[ "DivisionIcons" ];
+        public static readonly string DivisionImages = Settings[ "DivisionImages" ];
 
         /// <summary>
         /// The division text icon
@@ -143,11 +128,6 @@ namespace BudgetExecution
         /// The execution images
         /// </summary>
         public static readonly string ExecutionImages = Settings[ "ExecutionImages" ];
-
-        /// <summary>
-        /// The execution icons
-        /// </summary>
-        public static readonly string ExecutionIcons = Settings[ "ExecutionIcons" ];
 
         /// <summary>
         /// The tool bar

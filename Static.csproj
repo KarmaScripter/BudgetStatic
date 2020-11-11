@@ -38,8 +38,7 @@
     <StartupObject />
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>DbNinja.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BudgetBadger">
@@ -71,9 +70,7 @@
   <ItemGroup>
     <Content Include=".gitattributes" />
     <Content Include=".gitignore" />
-    <Content Include="lib\Syncfusion.Shared.Base.dll" />
-    <Content Include="lib\Syncfusion.Shared.Windows.dll" />
-    <Content Include="lib\Syncfusion.Tools.Windows.dll" />
+    <Content Include="DbNinja.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
@@ -88,7 +85,7 @@
     <Compile Include="Verify.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="etc\" />
+    <Folder Include="lib\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

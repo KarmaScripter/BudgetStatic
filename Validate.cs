@@ -1,13 +1,9 @@
-﻿// // <copyright file = "Validate.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿//  <copyright file = "Validate.cs" company = "Terry D. Eppler">
+//  Copyright (c) Terry D. Eppler. All rights reserved.
+//  </copyright>
 
 namespace BudgetExecution
 {
-    // ******************************************************************************************************************************
-    // ******************************************************   ASSEMBLIES   ********************************************************
-    // ******************************************************************************************************************************
-
     using System;
     using System;
     using System.Diagnostics.CodeAnalysis;
@@ -19,26 +15,18 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "MemberCanBeInternal" ) ]
     public class Validate
     {
-        // ***************************************************************************************************************************
-        // ****************************************************    METHODS    ********************************************************
-        // ***************************************************************************************************************************
-
         /// <summary>
-        /// Determines whether the specified field is field.
+        /// Fields the specified field.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="field">The field.</param>
-        /// <returns>
-        /// <c> true </c>
-        /// if the specified field is field; otherwise,
-        /// <c> false </c>
-        /// .
-        /// </returns>
-        public static bool Field<T>( T field ) where T : struct
+        /// <returns></returns>
+        public static bool Field<T>( T field )
+            where T : struct
         {
             if( !Enum.IsDefined( typeof( Field ), field ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum Field ] input argument!" ) );
                 return false;
             }
             else
@@ -48,21 +36,17 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Determines whether the specified source is source.
+        /// Sources the specified source.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source">The source.</param>
-        /// <returns>
-        /// <c> true </c>
-        /// if the specified source is source; otherwise,
-        /// <c> false </c>
-        /// .
-        /// </returns>
-        public static bool Source<T>( T source ) where T : struct
+        /// <returns></returns>
+        public static bool Source<T>( T source )
+            where T : struct
         {
             if( !Enum.IsDefined( typeof( Source ), source ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum Source ] input argument!" ) );
                 return false;
             }
             else
@@ -72,21 +56,17 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Determines whether the specified provider is provider.
+        /// Providers the specified provider.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="provider">The provider.</param>
-        /// <returns>
-        /// <c> true </c>
-        /// if the specified provider is provider; otherwise,
-        /// <c> false </c>
-        /// .
-        /// </returns>
-        public static bool Provider<T>( T provider ) where T : struct
+        /// <returns></returns>
+        public static bool Provider<T>( T provider )
+            where T : struct
         {
             if( !Enum.IsDefined( typeof( Provider ), provider ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum Provider ] input argument!" ) );
                 return false;
             }
             else
@@ -96,21 +76,17 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Determines whether the specified NPM is NPM.
+        /// NPMs the specified NPM.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="npm">The NPM.</param>
-        /// <returns>
-        /// <c> true </c>
-        /// if the specified NPM is NPM; otherwise,
-        /// <c> false </c>
-        /// .
-        /// </returns>
-        public static bool NPM<T>( T npm ) where T : struct
+        /// <returns></returns>
+        public static bool NPM<T>( T npm )
+            where T : struct
         {
             if( !Enum.IsDefined( typeof( NPM ), npm ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum NPM ] input argument!" ) );
                 return false;
             }
             else
@@ -120,21 +96,17 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Determines whether the specified extension is extension.
+        /// Exts the specified extension.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="extension">The extension.</param>
-        /// <returns>
-        /// <c> true </c>
-        /// if the specified extension is extension; otherwise,
-        /// <c> false </c>
-        /// .
-        /// </returns>
-        public static bool EXT<T>( T extension ) where T : struct
+        /// <returns></returns>
+        public static bool EXT<T>( T extension )
+            where T : struct
         {
             if( !Enum.IsDefined( typeof( EXT ), extension ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum EXT ] input argument!" ) );
                 return false;
             }
             else
@@ -144,21 +116,17 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Determines whether the specified boc is boc.
+        /// Bocs the specified boc.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="boc">The boc.</param>
-        /// <returns>
-        /// <c> true </c>
-        /// if the specified boc is boc; otherwise,
-        /// <c> false </c>
-        /// .
-        /// </returns>
-        public static bool BOC<T>( T boc ) where T : struct
+        /// <returns></returns>
+        public static bool BOC<T>( T boc )
+            where T : struct
         {
             if( !Enum.IsDefined( typeof( BOC ), boc ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum BOC ] input argument!" ) );
                 return false;
             }
             else
@@ -168,21 +136,17 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Determines whether the specified bfy is bfy.
+        /// Bfies the specified bfy.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="bfy">The bfy.</param>
-        /// <returns>
-        /// <c> true </c>
-        /// if the specified bfy is bfy; otherwise,
-        /// <c> false </c>
-        /// .
-        /// </returns>
-        public static bool BFY<T>( T bfy ) where T : struct
+        /// <returns></returns>
+        public static bool BFY<T>( T bfy )
+            where T : struct
         {
             if( !Enum.IsDefined( typeof( BFY ), bfy ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum BFY ] input argument!" ) );
                 return false;
             }
             else
@@ -192,21 +156,17 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Determines whether the specified rc is rc.
+        /// Rcs the specified rc.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="rc">The rc.</param>
-        /// <returns>
-        /// <c> true </c>
-        /// if the specified rc is rc; otherwise,
-        /// <c> false </c>
-        /// .
-        /// </returns>
-        public static bool RC<T>( T rc ) where T : struct
+        /// <returns></returns>
+        public static bool RC<T>( T rc )
+            where T : struct
         {
             if( !Enum.IsDefined( typeof( RC ), rc ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum RC ] input argument!" ) );
                 return false;
             }
             else
@@ -216,15 +176,15 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Grids the specified grid.
+        /// Grids the specified object.
         /// </summary>
-        /// <param name = "obj" > </param>
+        /// <param name="obj">The object.</param>
         /// <returns></returns>
         public static bool Grid( object obj )
         {
             if( obj != null )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ Grid obj ] input argument!" ) );
                 return false;
             }
             else
@@ -243,7 +203,7 @@ namespace BudgetExecution
         {
             if( !Enum.IsDefined( typeof( Availability ), avail ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum Availability ] input argument!" ) );
                 return false;
             }
             else
@@ -253,21 +213,17 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Determines whether [is chart type] [the specified charttype].
+        /// Charts the type.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="charttype">The charttype.</param>
-        /// <returns>
-        /// <c> true </c>
-        /// if [is chart type] [the specified charttype]; otherwise,
-        /// <c> false </c>
-        /// .
-        /// </returns>
-        public static bool ChartType<T>( T charttype ) where T : struct
+        /// <returns></returns>
+        public static bool ChartType<T>( T charttype )
+            where T : struct
         {
             if( !Enum.IsDefined( typeof( ChartType ), charttype ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ eum ChartType ] input argument!" ) );
                 return false;
             }
             else
@@ -277,21 +233,17 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Determines whether [is fund code] [the specified fundcode].
+        /// Funds the code.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="fundcode">The fundcode.</param>
-        /// <returns>
-        /// <c> true </c>
-        /// if [is fund code] [the specified fundcode]; otherwise,
-        /// <c> false </c>
-        /// .
-        /// </returns>
-        public static bool FundCode<T>( T fundcode ) where T : struct
+        /// <returns></returns>
+        public static bool FundCode<T>( T fundcode )
+            where T : struct
         {
             if( !Enum.IsDefined( typeof( FundCode ), fundcode ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum FundCode ] input argument!" ) );
                 return false;
             }
             else
@@ -301,21 +253,17 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Determines whether the specified rpio is rpio.
+        /// Rpioes the specified rpio.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="rpio">The rpio.</param>
-        /// <returns>
-        /// <c> true </c>
-        /// if the specified rpio is rpio; otherwise,
-        /// <c> false </c>
-        /// .
-        /// </returns>
-        public static bool RPIO<T>( T rpio ) where T : struct
+        /// <returns></returns>
+        public static bool RPIO<T>( T rpio )
+            where T : struct
         {
             if( !Enum.IsDefined( typeof( RPIO ), rpio ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum RPIO ] input argument!" ) );
                 return false;
             }
             else
@@ -325,21 +273,17 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Determines whether the specified stat is stat.
+        /// Stats the specified stat.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="stat">The stat.</param>
-        /// <returns>
-        /// <c> true </c>
-        /// if the specified stat is stat; otherwise,
-        /// <c> false </c>
-        /// .
-        /// </returns>
-        public static bool STAT<T>( T stat ) where T : struct
+        /// <returns></returns>
+        public static bool STAT<T>( T stat )
+            where T : struct
         {
             if( !Enum.IsDefined( typeof( STAT ), stat ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum STAT ] input argument!" ) );
                 return false;
             }
             else
@@ -349,21 +293,17 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Determines whether [is primary key] [the specified key].
+        /// Primaries the key.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="key">The key.</param>
-        /// <returns>
-        /// <c> true </c>
-        /// if [is primary key] [the specified key]; otherwise,
-        /// <c> false </c>
-        /// .
-        /// </returns>
-        public static bool PrimaryKey<T>( T key ) where T : struct
+        /// <returns></returns>
+        public static bool PrimaryKey<T>( T key )
+            where T : struct
         {
             if( !Enum.IsDefined( typeof( PrimaryKey ), key ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum PrimaryKey ] input argument!" ) );
                 return false;
             }
             else
@@ -373,21 +313,17 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Determines whether the specified numeric is numeric.
+        /// Numerics the specified numeric.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="numeric">The numeric.</param>
-        /// <returns>
-        /// <c> true </c>
-        /// if the specified numeric is numeric; otherwise,
-        /// <c> false </c>
-        /// .
-        /// </returns>
-        public static bool Numeric<T>( T numeric ) where T : struct
+        /// <returns></returns>
+        public static bool Numeric<T>( T numeric )
+            where T : struct
         {
             if( !Enum.IsDefined( typeof( Numeric ), numeric ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum Numeric ] input argument!" ) );
                 return false;
             }
             else
@@ -397,21 +333,17 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Determines whether [is image resource] [the specified imageresource].
+        /// Images the resource.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="imageresource">The imageresource.</param>
-        /// <returns>
-        /// <c> true </c>
-        /// if [is image resource] [the specified imageresource]; otherwise,
-        /// <c> false </c>
-        /// .
-        /// </returns>
-        public static bool ImageResource<T>( T imageresource ) where T : struct
+        /// <returns></returns>
+        public static bool ImageResource<T>( T imageresource )
+            where T : struct
         {
             if( !Enum.IsDefined( typeof( ImageSource ), imageresource ) )
             {
-                Fail( new ArgumentException() );
+                Fail( new ArgumentException( "Verify [ enum ImageSource ] input argument!" ) );
                 return false;
             }
             else
@@ -421,7 +353,7 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Get Error Dialog.
+        /// Fails the specified ex.
         /// </summary>
         /// <param name="ex">The ex.</param>
         private protected static void Fail( Exception ex )
