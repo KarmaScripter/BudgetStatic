@@ -201,7 +201,7 @@ namespace BudgetExecution
         /// <returns></returns>
         public static bool Availability<T>( T avail )
         {
-            if( !Enum.IsDefined( typeof( Availability ), avail ) )
+            if( !Enum.IsDefined( typeof( FundAvailability ), avail ) )
             {
                 Fail( new ArgumentException( "Verify [ enum Availability ] input argument!" ) );
                 return false;

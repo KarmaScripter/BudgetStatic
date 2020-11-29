@@ -413,10 +413,10 @@ namespace BudgetExecution
         /// <typeparam name="T"></typeparam>
         /// <param name="date">The date.</param>
         /// <returns></returns>
-        public static bool Date<T>( T date )
+        public static bool EventDate<T>( T date )
             where T : struct
         {
-            if( !Enum.IsDefined( typeof( Date ), date ) )
+            if( !Enum.IsDefined( typeof( EventDate ), date ) )
             {
                 Fail( new ArgumentException( "Verify [ enum Date ] input argument" ) );
                 return false;

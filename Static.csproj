@@ -38,7 +38,7 @@
     <StartupObject />
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>DbNinja.ico</ApplicationIcon>
+    <ApplicationIcon>etc\DbNinja.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BudgetBadger">
@@ -70,7 +70,7 @@
   <ItemGroup>
     <Content Include=".gitattributes" />
     <Content Include=".gitignore" />
-    <Content Include="DbNinja.ico" />
+    <Content Include="etc\DbNinja.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
@@ -78,14 +78,12 @@
     <None Include="BudgetExecution.DotSettings" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Resource.cs" />
-    <Compile Include="Validate.cs" />
-    <Compile Include="Verify.cs" />
+    <Compile Include="src\Static.cs" />
+    <Compile Include="src\Program.cs" />
+    <Compile Include="src\Resource.cs" />
+    <Compile Include="src\Validate.cs" />
+    <Compile Include="src\Verify.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="lib\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,4 @@
-﻿// // <copyright file = "Application.cs" company = "Terry D. Eppler">
+﻿// // <copyright file = "Static.cs" company = "Terry D. Eppler">
 // // Copyright (c) Terry D. Eppler. All rights reserved.
 // // </copyright>
 
@@ -25,7 +25,7 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "MemberCanBePrivate.Global" ) ]
     [ SuppressMessage( "ReSharper", "MemberCanBeInternal" ) ]
     [ SuppressMessage( "ReSharper", "ConvertSwitchStatementToSwitchExpression" ) ]
-    public static class Application
+    public static class Static
     {
         // ***************************************************************************************************************************
         // ****************************************************     FIELDS    ********************************************************
