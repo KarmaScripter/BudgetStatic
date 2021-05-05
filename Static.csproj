@@ -41,17 +41,20 @@
     <ApplicationIcon>etc\DbNinja.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BudgetBadger">
-      <HintPath>..\BudgetBadger\bin\Debug\BudgetBadger.dll</HintPath>
+    <Reference Include="BudgetBadger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\BudgetBadger.dll</HintPath>
     </Reference>
-    <Reference Include="BudgetEnumerations">
-      <HintPath>..\BudgetBadger\bin\Debug\BudgetEnumerations.dll</HintPath>
+    <Reference Include="BudgetEnumerations, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\BudgetEnumerations.dll</HintPath>
     </Reference>
-    <Reference Include="BudgetExtensions">
-      <HintPath>..\BudgetBadger\bin\Debug\BudgetExtensions.dll</HintPath>
+    <Reference Include="BudgetExtensions, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\BudgetExtensions.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Shared.Base">
-      <HintPath>..\BudgetBadger\bin\Debug\Syncfusion.Shared.Base.dll</HintPath>
+      <HintPath>E:\projects\cs\lib\Syncfusion.Shared.Base.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -63,7 +66,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="VisualPlus">
-      <HintPath>..\Badger\lib\VisualPlus.dll</HintPath>
+      <HintPath>E:\projects\cs\lib\VisualPlus.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
