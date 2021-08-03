@@ -5,7 +5,6 @@
 namespace BudgetExecution
 {
     using System;
-    using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Threading;
 
@@ -236,12 +235,12 @@ namespace BudgetExecution
         /// Funds the code.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="fundcode">The fundcode.</param>
+        /// <param name="fundCode">The fundCode.</param>
         /// <returns></returns>
-        public static bool FundCode<T>( T fundcode )
+        public static bool FundCode<T>( T fundCode )
             where T : struct
         {
-            if( !Enum.IsDefined( typeof( FundCode ), fundcode ) )
+            if( !Enum.IsDefined( typeof( FundCode ), fundCode ) )
             {
                 Fail( new ArgumentException( "Verify [ enum FundCode ] input argument!" ) );
                 return false;
@@ -336,12 +335,12 @@ namespace BudgetExecution
         /// Images the resource.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="imageresource">The imageresource.</param>
+        /// <param name="imageResource">The imageResource.</param>
         /// <returns></returns>
-        public static bool ImageResource<T>( T imageresource )
+        public static bool ImageResource<T>( T imageResource )
             where T : struct
         {
-            if( !Enum.IsDefined( typeof( ImageSource ), imageresource ) )
+            if( !Enum.IsDefined( typeof( ImageSource ), imageResource ) )
             {
                 Fail( new ArgumentException( "Verify [ enum ImageSource ] input argument!" ) );
                 return false;
@@ -358,9 +357,9 @@ namespace BudgetExecution
         /// <param name="ex">The ex.</param>
         private protected static void Fail( Exception ex )
         {
-            using var error = new Error( ex );
-            error?.SetText();
-            error?.ShowDialog();
+            using var _error = new Error( ex );
+            _error?.SetText();
+            _error?.ShowDialog();
         }
     }
 }

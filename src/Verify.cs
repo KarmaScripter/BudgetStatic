@@ -1,17 +1,15 @@
-﻿// // <copyright file = "Verify.cs" company = "Terry D. Eppler">
-// // Copyright (c) Terry D. Eppler. All rights reserved.
-// // </copyright>
+﻿// <copyright file = "Verify.cs" company = "Terry D. Eppler">
+// Copyright (c) Terry D. Eppler. All rights reserved.
+// </copyright>
 
 namespace BudgetExecution
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
-    using System.Configuration;
     using System.Data;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
-    using System.Windows.Interop;
 
     /// <summary>
     /// 
@@ -236,12 +234,12 @@ namespace BudgetExecution
         /// Images the format.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="imageformat">The imageformat.</param>
+        /// <param name="imageFormat">The imageFormat.</param>
         /// <returns></returns>
-        public static bool ImageFormat<T>( T imageformat )
+        public static bool ImageFormat<T>( T imageFormat )
             where T : struct
         {
-            if( !Enum.IsDefined( typeof( ImageFormat ), imageformat ) )
+            if( !Enum.IsDefined( typeof( ImageFormat ), imageFormat ) )
             {
                 Fail( new ArgumentException( "Verify [ enum ImageFormat ] input argument!" ) );
                 return false;
@@ -256,12 +254,12 @@ namespace BudgetExecution
         /// Images the size.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="imagesize">The imagesize.</param>
+        /// <param name="imageSize">The imageSize.</param>
         /// <returns></returns>
-        public static bool ImageSize<T>( T imagesize )
+        public static bool ImageSize<T>( T imageSize )
             where T : struct
         {
-            if( !Enum.IsDefined( typeof( ImageSizer ), imagesize ) )
+            if( !Enum.IsDefined( typeof( ImageSizer ), imageSize ) )
             {
                 Fail( new ArgumentException( "Verify [ enum ImageSizer ] input argument!" ) );
                 return false;
@@ -303,10 +301,10 @@ namespace BudgetExecution
         public static bool IsAuthority<T>( T source )
             where T : struct
         {
-            var input = (Source)Enum.Parse( typeof( Source ), source.ToString() );
+            var _source = (Source)Enum.Parse( typeof( Source ), source.ToString() );
 
             if( !Enum.IsDefined( typeof( Source ), source )
-                || !Resource.AuthoritySources.Contains( input ) )
+                || !Resource.AuthoritySources.Contains( _source ) )
             {
                 Fail( new ArgumentException( "Verify [ enum Source ] input argument!" ) );
                 return false;
@@ -328,10 +326,10 @@ namespace BudgetExecution
         public static bool IsDivision<T>( T source )
             where T : struct
         {
-            var input = (Source)Enum.Parse( typeof( Source ), source.ToString() );
+            var _source = (Source)Enum.Parse( typeof( Source ), source.ToString() );
 
             if( !Enum.IsDefined( typeof( Source ), source )
-                || !Resource.DivisionSources.Contains( input ) )
+                || !Resource.DivisionSources.Contains( _source ) )
             {
                 Fail( new ArgumentException( "Verify [ enum Source ] input argument!" ) );
                 return false;
@@ -355,8 +353,8 @@ namespace BudgetExecution
         {
             if( Enum.IsDefined( typeof( Source ), source ) )
             {
-                var input = (Source)Enum.Parse( typeof( Source ), source.ToString() );
-                return Resource.SupplementalSources.Contains( input );
+                var _source = (Source)Enum.Parse( typeof( Source ), source.ToString() );
+                return Resource.SupplementalSources.Contains( _source );
             }
             else
             {

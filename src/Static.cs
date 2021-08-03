@@ -4,10 +4,6 @@
 
 namespace BudgetExecution
 {
-    // ******************************************************************************************************************************
-    // ******************************************************   ASSEMBLIES   ********************************************************
-    // ******************************************************************************************************************************
-
     using System;
     using System.Collections.Generic;
     using System.Collections.Specialized;
@@ -27,10 +23,6 @@ namespace BudgetExecution
     [ SuppressMessage( "ReSharper", "ConvertSwitchStatementToSwitchExpression" ) ]
     public static class Static
     {
-        // ***************************************************************************************************************************
-        // ****************************************************     FIELDS    ********************************************************
-        // ***************************************************************************************************************************
-
         /// <summary>
         /// Gets the type of the SQL.
         /// </summary>
@@ -64,7 +56,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default;
+                return default( string );
             }
         }
 
@@ -89,12 +81,12 @@ namespace BudgetExecution
 
                 return Verify.Input( retval?.CommandText )
                     ? retval
-                    : default;
+                    : default( IDbCommand );
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default;
+                return default( IDbCommand );
             }
         }
 
@@ -108,13 +100,13 @@ namespace BudgetExecution
         {
             try
             {
-                using var command = connection.CreateCommand( sql );
-                return command.ExecuteNonQuery();
+                using var _command = connection.CreateCommand( sql );
+                return _command.ExecuteNonQuery();
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default;
+                return default( int );
             }
         }
 
@@ -128,24 +120,24 @@ namespace BudgetExecution
         {
             try
             {
-                var msg = new StringBuilder();
+                var _stringBuilder = new StringBuilder();
 
                 if( Verify.Input( message ) )
                 {
-                    msg.Append( message );
-                    msg.Append( Environment.NewLine );
+                    _stringBuilder.Append( message );
+                    _stringBuilder.Append( Environment.NewLine );
                 }
 
                 if( ex != null )
                 {
                     var orgex = ex;
-                    msg.Append( "Exception:" );
-                    msg.Append( Environment.NewLine );
+                    _stringBuilder.Append( "Exception:" );
+                    _stringBuilder.Append( Environment.NewLine );
 
                     while( orgex != null )
                     {
-                        msg.Append( orgex.Message );
-                        msg.Append( Environment.NewLine );
+                        _stringBuilder.Append( orgex.Message );
+                        _stringBuilder.Append( Environment.NewLine );
                         orgex = orgex.InnerException;
                     }
 
@@ -153,52 +145,52 @@ namespace BudgetExecution
                     {
                         foreach( var i in ex.Data )
                         {
-                            msg.Append( "Data :" );
-                            msg.Append( i );
-                            msg.Append( Environment.NewLine );
+                            _stringBuilder.Append( "Data :" );
+                            _stringBuilder.Append( i );
+                            _stringBuilder.Append( Environment.NewLine );
                         }
                     }
 
                     if( ex.StackTrace != null )
                     {
-                        msg.Append( "StackTrace:" );
-                        msg.Append( Environment.NewLine );
-                        msg.Append( ex.StackTrace );
-                        msg.Append( Environment.NewLine );
+                        _stringBuilder.Append( "StackTrace:" );
+                        _stringBuilder.Append( Environment.NewLine );
+                        _stringBuilder.Append( ex.StackTrace );
+                        _stringBuilder.Append( Environment.NewLine );
                     }
 
                     if( ex.Source != null )
                     {
-                        msg.Append( "Source:" );
-                        msg.Append( Environment.NewLine );
-                        msg.Append( ex.Source );
-                        msg.Append( Environment.NewLine );
+                        _stringBuilder.Append( "Source:" );
+                        _stringBuilder.Append( Environment.NewLine );
+                        _stringBuilder.Append( ex.Source );
+                        _stringBuilder.Append( Environment.NewLine );
                     }
 
                     if( ex.TargetSite != null )
                     {
-                        msg.Append( "TargetSite:" );
-                        msg.Append( Environment.NewLine );
-                        msg.Append( ex.TargetSite );
-                        msg.Append( Environment.NewLine );
+                        _stringBuilder.Append( "TargetSite:" );
+                        _stringBuilder.Append( Environment.NewLine );
+                        _stringBuilder.Append( ex.TargetSite );
+                        _stringBuilder.Append( Environment.NewLine );
                     }
 
-                    var baseexception = ex.GetBaseException();
+                    var _baseException = ex.GetBaseException();
 
-                    if( baseexception != null )
+                    if( _baseException != null )
                     {
-                        msg.Append( "BaseException:" );
-                        msg.Append( Environment.NewLine );
-                        msg.Append( ex.GetBaseException() );
+                        _stringBuilder.Append( "BaseException:" );
+                        _stringBuilder.Append( Environment.NewLine );
+                        _stringBuilder.Append( ex.GetBaseException() );
                     }
                 }
 
-                return msg.ToString();
+                return _stringBuilder.ToString();
             }
             catch( Exception e )
             {
                 Fail( e );
-                return default;
+                return default( string );
             }
         }
 
@@ -211,22 +203,22 @@ namespace BudgetExecution
         {
             try
             {
-                var dict = new Dictionary<string, object>();
+                var _dict = new Dictionary<string, object>();
 
                 if( nvm != null )
                 {
                     foreach( var key in nvm.AllKeys )
                     {
-                        dict.Add( key, nvm[ key ] );
+                        _dict.Add( key, nvm[ key ] );
                     }
                 }
 
-                return dict;
+                return _dict;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default;
+                return default( IDictionary<string, object> );
             }
         }
 
@@ -236,9 +228,9 @@ namespace BudgetExecution
         /// <param name="ex">The ex.</param>
         public static void Fail( Exception ex )
         {
-            using var error = new Error( ex );
-            error?.SetText();
-            error?.ShowDialog();
+            using var _error = new Error( ex );
+            _error?.SetText();
+            _error?.ShowDialog();
         }
     }
 }
