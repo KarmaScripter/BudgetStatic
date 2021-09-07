@@ -1,2 +1,2 @@
 # BudgetStatic
-Static types used in Budget Execution. Compiled separately and used as reference DLL.
+Static types used in Budget Execution.  Compiled separately as DLL library and referenced.
