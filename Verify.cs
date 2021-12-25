@@ -25,7 +25,7 @@ namespace BudgetExecution
         /// <typeparam name="T"></typeparam>
         /// <param name="data">The input.</param>
         /// <returns></returns>
-        public static bool Table<T>( T data )
+        public static bool IsTable<T>( T data )
             where T : IListSource
         {
             if( !data?.ContainsListCollection == true )
@@ -45,7 +45,7 @@ namespace BudgetExecution
         /// <typeparam name="T"></typeparam>
         /// <param name="data">The input.</param>
         /// <returns></returns>
-        public static bool Row<T>( T data )
+        public static bool IsRow<T>( T data )
             where T : DataRow
         {
             if( !data?.ItemArray?.Any() == true )
@@ -64,7 +64,7 @@ namespace BudgetExecution
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns></returns>
-        public static bool Input( object input )
+        public static bool IsInput( object input )
         {
             if( string.IsNullOrEmpty( input?.ToString() ) )
             {
@@ -83,7 +83,7 @@ namespace BudgetExecution
         /// <typeparam name="T"></typeparam>
         /// <param name="data">The input.</param>
         /// <returns></returns>
-        public static bool Rows<T>( T data )
+        public static bool IsRows<T>( T data )
             where T : IEnumerable<DataRow>
         {
             if( !data?.Any() == true )
@@ -102,7 +102,7 @@ namespace BudgetExecution
         /// </summary>
         /// <param name="obj">The object.</param>
         /// <returns></returns>
-        public static bool Map( object obj )
+        public static bool IsMap( object obj )
         {
             if( obj != null )
             {
@@ -118,11 +118,11 @@ namespace BudgetExecution
         /// <summary>
         /// Keys the specified object.
         /// </summary>
-        /// <param name="obj">The object.</param>
+        /// <param name="data">The object.</param>
         /// <returns></returns>
-        public static bool Key( object obj )
+        public static bool IsKey( object data )
         {
-            if( obj != null )
+            if( data != null )
             {
                 Fail( new ArgumentException( "Verify [ object ] input argument!" ) );
                 return false;
@@ -138,7 +138,7 @@ namespace BudgetExecution
         /// </summary>
         /// <param name="data">The object.</param>
         /// <returns></returns>
-        public static bool Amount( object data )
+        public static bool IsAmount( object data )
         {
             if( data != null )
             {
@@ -156,11 +156,11 @@ namespace BudgetExecution
         /// </summary>
         /// <param name="data">The object.</param>
         /// <returns></returns>
-        public static bool Element( object data )
+        public static bool IsElement( object data )
         {
             if( data != null )
             {
-                Fail( new ArgumentException( "Verify [ Element data ] input argument!" ) );
+                Fail( new ArgumentException( "Verify [ IsElement data ] input argument!" ) );
                 return false;
             }
             else
@@ -175,7 +175,7 @@ namespace BudgetExecution
         /// <typeparam name="T"></typeparam>
         /// <param name="data">The input.</param>
         /// <returns></returns>
-        public static bool Map<T>( T data )
+        public static bool IsMap<T>( T data )
             where T : IDictionary<string, object>
         {
             if( !data?.Any() == true )
@@ -217,7 +217,7 @@ namespace BudgetExecution
         /// <typeparam name="T"></typeparam>
         /// <param name="data">The input.</param>
         /// <returns></returns>
-        public static bool Sequence<T>( IEnumerable<T> data )
+        public static bool IsSequence<T>( IEnumerable<T> data )
         {
             if( data?.Any() == true )
             {
@@ -236,12 +236,12 @@ namespace BudgetExecution
         /// <typeparam name="T"></typeparam>
         /// <param name="imageFormat">The imageFormat.</param>
         /// <returns></returns>
-        public static bool ImageFormat<T>( T imageFormat )
+        public static bool IsImageFormat<T>( T imageFormat )
             where T : struct
         {
             if( !Enum.IsDefined( typeof( ImageFormat ), imageFormat ) )
             {
-                Fail( new ArgumentException( "Verify [ enum ImageFormat ] input argument!" ) );
+                Fail( new ArgumentException( "Verify [ enum IsImageFormat ] input argument!" ) );
                 return false;
             }
             else
@@ -256,7 +256,7 @@ namespace BudgetExecution
         /// <typeparam name="T"></typeparam>
         /// <param name="imageSize">The imageSize.</param>
         /// <returns></returns>
-        public static bool ImageSize<T>( T imageSize )
+        public static bool IsImageSize<T>( T imageSize )
             where T : struct
         {
             if( !Enum.IsDefined( typeof( ImageSizer ), imageSize ) )
@@ -276,7 +276,7 @@ namespace BudgetExecution
         /// <typeparam name="T"></typeparam>
         /// <param name="transfer">The transfer.</param>
         /// <returns></returns>
-        public static bool TransferType<T>( T transfer )
+        public static bool IsTransfer<T>( T transfer )
             where T : struct
         {
             if( !Enum.IsDefined( typeof( TransferType ), transfer ) )
@@ -305,31 +305,6 @@ namespace BudgetExecution
 
             if( !Enum.IsDefined( typeof( Source ), source )
                 || !Resource.AuthoritySources.Contains( _source ) )
-            {
-                Fail( new ArgumentException( "Verify [ enum Source ] input argument!" ) );
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        /// <summary>
-        /// Determines whether the specified source is division.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="source">The source.</param>
-        /// <returns>
-        ///   <c>true</c> if the specified source is division; otherwise, <c>false</c>.
-        /// </returns>
-        public static bool IsDivision<T>( T source )
-            where T : struct
-        {
-            var _source = (Source)Enum.Parse( typeof( Source ), source.ToString() );
-
-            if( !Enum.IsDefined( typeof( Source ), source )
-                || !Resource.DivisionSources.Contains( _source ) )
             {
                 Fail( new ArgumentException( "Verify [ enum Source ] input argument!" ) );
                 return false;
@@ -371,7 +346,7 @@ namespace BudgetExecution
         /// <returns>
         ///   <c>true</c> if the specified source is outlay; otherwise, <c>false</c>.
         /// </returns>
-        public static bool IsOutlay<T>( T source )
+        public static bool IsOutflow<T>( T source )
             where T : struct
         {
             if( !Enum.IsDefined( typeof( Source ), source ) )
@@ -391,12 +366,12 @@ namespace BudgetExecution
         /// <typeparam name="T"></typeparam>
         /// <param name="date">The date.</param>
         /// <returns></returns>
-        public static bool DateTime<T>( T date )
+        public static bool IsDateTime<T>( T date )
             where T : struct
         {
             if( !System.DateTime.TryParse( date.ToString(), out _ ) )
             {
-                Fail( new ArgumentException( "Verify [ DateTime date ] input argument!" ) );
+                Fail( new ArgumentException( "Verify [ IsDateTime date ] input argument!" ) );
                 return false;
             }
             else
@@ -411,7 +386,7 @@ namespace BudgetExecution
         /// <typeparam name="T"></typeparam>
         /// <param name="date">The date.</param>
         /// <returns></returns>
-        public static bool EventDate<T>( T date )
+        public static bool IsEventDate<T>( T date )
             where T : struct
         {
             if( !Enum.IsDefined( typeof( EventDate ), date ) )
@@ -430,11 +405,11 @@ namespace BudgetExecution
         /// </summary>
         /// <param name="obj">The object.</param>
         /// <returns></returns>
-        public static bool Time( object obj )
+        public static bool IsTime( object obj )
         {
             if( obj != null )
             {
-                Fail( new ArgumentException( "Verify [ struct Time ] input argument!" ) );
+                Fail( new ArgumentException( "Verify [ struct IsTime ] input argument!" ) );
                 return false;
             }
             else
@@ -448,7 +423,7 @@ namespace BudgetExecution
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns></returns>
-        public static bool Ref( object input )
+        public static bool IsRef( object input )
         {
             if( input == null )
             {
