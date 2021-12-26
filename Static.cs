@@ -10,7 +10,6 @@ namespace BudgetExecution
     using System.Data;
     using System.Diagnostics.CodeAnalysis;
     using System.Text;
-    using System.Threading;
 
     /// <summary>
     /// 
@@ -34,24 +33,14 @@ namespace BudgetExecution
             {
                 type = Nullable.GetUnderlyingType( type ) ?? type;
 
-                switch( type.Name )
+                return type.Name switch
                 {
-                    case "String":
-                    case "Boolean":
-                        return "Text";
-
-                    case "DateTime":
-                        return "Date";
-
-                    case "Int32":
-                        return "Double";
-
-                    case "Decimal":
-                        return "Currency";
-
-                    default:
-                        return type.Name;
-                }
+                    "String" or "Boolean" => "Text",
+                    "IsDateTime" => "Date",
+                    "Int32" => "Double",
+                    "Decimal" => "Currency",
+                    _ => type.Name,
+                };
             }
             catch( Exception ex )
             {
@@ -131,15 +120,15 @@ namespace BudgetExecution
 
                 if( ex != null )
                 {
-                    var _orgex = ex;
+                    var orgex = ex;
                     _stringBuilder.Append( "Exception:" );
                     _stringBuilder.Append( Environment.NewLine );
 
-                    while( _orgex != null )
+                    while( orgex != null )
                     {
-                        _stringBuilder.Append( _orgex.Message );
+                        _stringBuilder.Append( orgex.Message );
                         _stringBuilder.Append( Environment.NewLine );
-                        _orgex = _orgex.InnerException;
+                        orgex = orgex.InnerException;
                     }
 
                     if( ex.Data != null )

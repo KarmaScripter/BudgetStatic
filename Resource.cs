@@ -7,7 +7,6 @@ namespace BudgetExecution
     using System;
     using System.Collections.Specialized;
     using System.Configuration;
-    using System.Threading;
 
     /// <summary>
     /// 
@@ -15,117 +14,114 @@ namespace BudgetExecution
     public static class Resource
     {
         /// <summary>
-        /// Gets the settings.
+        /// The settings
         /// </summary>
-        /// <value>
-        /// The settings.
-        /// </value>
-        public static NameValueCollection Settings { get; } = ConfigurationManager.AppSettings;
+        public static readonly NameValueCollection Settings = ConfigurationManager.AppSettings;
 
         /// <summary>
         /// The summary
         /// </summary>
-        public static readonly string Summary = Settings[ "SummaryImages" ];
+        public static string Summary = Settings[ "SummaryImages" ];
 
         /// <summary>
         /// The fund images
         /// </summary>
-        public static readonly string FundImages = Settings[ "FundImages" ];
+        public static string FundImages = Settings[ "FundImages" ];
 
         /// <summary>
         /// The databases
         /// </summary>
-        public static readonly string Databases = Settings[ "Database" ];
+        public static string Databases = Settings[ "DatabaseImages" ];
 
         /// <summary>
         /// The data images
         /// </summary>
-        public static readonly string DataImages = Settings[ "DataImages" ];
+        public static string DataImages = Settings[ "DataImages" ];
 
         /// <summary>
         /// The office images
         /// </summary>
-        public static readonly string OfficeImages = Settings[ "OfficeImages" ];
+        public static string OfficeImages = Settings[ "OfficeImages" ];
 
         /// <summary>
         /// The navigation images
         /// </summary>
-        public static readonly string NavigationImages = Settings[ "NavigationImages" ];
+        public static string NavigationImages = Settings[ "NavigationImages" ];
 
         /// <summary>
         /// The codec images
         /// </summary>
-        public static readonly string CodecImages = Settings[ "CodecImages" ];
+        public static string CodecImages = Settings[ "CodecImages" ];
 
         /// <summary>
         /// The outlay images
         /// </summary>
-        public static readonly string OutlayImages = Settings[ "OutlayImages" ];
+        public static string OutlayImages = Settings[ "OutlayImages" ];
 
         /// <summary>
         /// The file images
         /// </summary>
-        public static readonly string FileImages = Settings[ "FileImages" ];
+        public static string FileImages = Settings[ "FileImages" ];
 
         /// <summary>
         /// The object class images
         /// </summary>
-        public static readonly string ObjectClassImages = Settings[ "ObjectClassImages" ];
+        public static string ObjectClassImages = Settings[ "ObjectClassImages" ];
 
         /// <summary>
         /// The provider images
         /// </summary>
-        public static readonly string ProviderImages = Settings[ "ProviderImages" ];
+        public static string ProviderImages = Settings[ "ProviderImages" ];
 
         /// <summary>
         /// The math images
         /// </summary>
-        public static readonly string MathImages = Settings[ "MathImages" ];
+        public static string MathImages = Settings[ "MathImages" ];
 
         /// <summary>
         /// The interface images
         /// </summary>
-        public static readonly string InterfaceImages = Settings[ "InterfaceImages" ];
+        public static string InterfaceImages = Settings[ "InterfaceImages" ];
 
         /// <summary>
         /// The folder images
         /// </summary>
-        public static readonly string FolderImages = Settings[ "FolderImages" ];
+        public static string FolderImages = Settings[ "FolderImages" ];
 
         /// <summary>
         /// The division caption
         /// </summary>
-        public static readonly string DivisionCaption = Settings[ "DivisionCaption" ];
+        public static string DivisionCaption = Settings[ "DivisionCaption" ];
 
         /// <summary>
         /// The division images
         /// </summary>
-        public static readonly string DivisionImages = Settings[ "DivisionImages" ];
+        public static string DivisionImages = Settings[ "DivisionImages" ];
 
         /// <summary>
         /// The division text icon
         /// </summary>
-        public static readonly string DivisionTextIcon = Settings[ "DivisionTextIcon" ];
+        public static string DivisionTextIcon = Settings[ "DivisionTextIcon" ];
 
         /// <summary>
         /// The main form images
         /// </summary>
-        public static readonly string MainFormImages = Settings[ "MainFormImages" ];
+        public static string MainFormImages = Settings[ "MainFormImages" ];
 
         /// <summary>
         /// The execution images
         /// </summary>
-        public static readonly string ExecutionImages = Settings[ "ExecutionImages" ];
+        public static string ExecutionImages = Settings[ "ExecutionImages" ];
 
         /// <summary>
-        /// The tool bar
+        /// The tool bar images
         /// </summary>
-        public static readonly string ToolBar = Settings[ "ToolBar" ];
+        public static string ToolBarImages = Settings[ "ToolBarImages" ];
 
         /// <summary>
         /// The division sources
         /// </summary>
-        public static readonly Source[ ] DivisionSources =
+        public static Source[ ] DivisionSources =
         {
             Source.EJ,
             Source.ECAD,
@@ -146,7 +142,7 @@ namespace BudgetExecution
         /// <summary>
         /// The appropriation sources
         /// </summary>
-        public static readonly Source[ ] AppropriationSources =
+        public static Source[ ] AppropriationSources =
         {
             Source.EPM,
             Source.SF6A,
@@ -166,7 +162,7 @@ namespace BudgetExecution
         /// <summary>
         /// The object class sources
         /// </summary>
-        public static readonly Source[ ] ObjectClassSources =
+        public static Source[ ] ObjectClassSources =
         {
             Source.Contracts,
             Source.FTE,
@@ -182,12 +178,12 @@ namespace BudgetExecution
         /// <summary>
         /// The chart types
         /// </summary>
-        public static readonly string[ ] ChartTypes = Enum.GetNames( typeof( ChartType ) );
+        public static string[ ] ChartTypes = Enum.GetNames( typeof( ChartType ) );
 
         /// <summary>
         /// The reference sources
         /// </summary>
-        public static readonly Source[ ] ReferenceSources =
+        public static Source[ ] ReferenceSources =
         {
             Source.Accounts,
             Source.Activity,
@@ -195,12 +191,10 @@ namespace BudgetExecution
             Source.Appropriations,
             Source.ControlNumbers,
             Source.BudgetObjectClass,
-            Source.Divisions,
             Source.Employees,
             Source.FinanceObjectClass,
             Source.Funds,
             Source.Goals,
-            Source.WorkforceData,
             Source.HumanResourceOrganizations,
             Source.NationalPrograms,
             Source.Objectives,
@@ -219,7 +213,7 @@ namespace BudgetExecution
         /// <summary>
         /// The allocation sources
         /// </summary>
-        public static readonly Source[ ] AllocationSources =
+        public static Source[ ] AllocationSources =
         {
             Source.PRC,
             Source.Allocations,
@@ -275,8 +269,6 @@ namespace BudgetExecution
             Source.PRC,
             Source.Allocations,
             Source.Transfers,
-            Source.DivisionAuthority,
-            Source.DivisionExecution,
             Source.RegionAuthority,
             Source.CleanWaterStateRevolvingFund,
             Source.InternalTransfers,
@@ -302,21 +294,7 @@ namespace BudgetExecution
             Source.Awards,
             Source.TimeOff,
             Source.Overtime,
-            Source.EJ,
-            Source.ECAD,
-            Source.ORA,
-            Source.ORC,
-            Source.SEMD,
-            Source.MSD,
             Source.DrinkingWaterStateRevolvingFund,
-            Source.WD,
-            Source.XA,
-            Source.ARD,
-            Source.WSA,
-            Source.MSR,
-            Source.WCF,
-            Source.LCARD,
-            Source.LSASD,
             Source.NonSiteTravel,
             Source.Reprogrammings,
             Source.Transfers
@@ -336,7 +314,7 @@ namespace BudgetExecution
         /// <summary>
         /// The outlay sources
         /// </summary>
-        public static readonly Source[ ] OutlaySources =
+        public static Source[ ] OutlaySources =
         {
             Source.Outlays,
             Source.Payments,
@@ -370,36 +348,36 @@ namespace BudgetExecution
         /// <summary>
         /// The fields
         /// </summary>
-        public static readonly string[ ] Fields = Enum.GetNames( typeof( Field ) );
+        public static string[ ] Fields = Enum.GetNames( typeof( Field ) );
 
         /// <summary>
         /// The numerics
         /// </summary>
-        public static readonly string[ ] Numerics = Enum.GetNames( typeof( Numeric ) );
+        public static string[ ] Numerics = Enum.GetNames( typeof( Numeric ) );
 
         /// <summary>
         /// The primary keys
         /// </summary>
-        public static readonly string[ ] PrimaryKeys = Enum.GetNames( typeof( PrimaryKey ) );
+        public static string[ ] PrimaryKeys = Enum.GetNames( typeof( PrimaryKey ) );
 
         /// <summary>
         /// The extensions
         /// </summary>
-        public static readonly string[ ] Extensions = Enum.GetNames( typeof( EXT ) );
+        public static string[ ] Extensions = Enum.GetNames( typeof( EXT ) );
 
         /// <summary>
         /// The image resources
         /// </summary>
-        public static readonly string[ ] ImageResources = Enum.GetNames( typeof( ImageSource ) );
+        public static string[ ] ImageResources = Enum.GetNames( typeof( ImageSource ) );
 
         /// <summary>
         /// The charts
         /// </summary>
-        public static readonly string[ ] Charts = Enum.GetNames( typeof( ChartType ) );
+        public static string[ ] Charts = Enum.GetNames( typeof( ChartType ) );
 
         /// <summary>
         /// The tools
         /// </summary>
-        public static readonly string[ ] Tools = Enum.GetNames( typeof( Tool ) );
+        public static string[ ] Tools = Enum.GetNames( typeof( Tool ) );
     }
 }
