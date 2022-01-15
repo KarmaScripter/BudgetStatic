@@ -316,29 +316,6 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Determines whether the specified source is supplemental.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="source">The source.</param>
-        /// <returns>
-        ///   <c>true</c> if the specified source is supplemental; otherwise, <c>false</c>.
-        /// </returns>
-        public static bool IsSupplemental<T>( T source )
-            where T : struct
-        {
-            if( Enum.IsDefined( typeof( Source ), source ) )
-            {
-                var _source = (Source)Enum.Parse( typeof( Source ), source.ToString() );
-                return Resource.SupplementalSources.Contains( _source );
-            }
-            else
-            {
-                Fail( new ArgumentException( "Verify [ enum Source ] input argument!" ) );
-                return false;
-            }
-        }
-
-        /// <summary>
         /// Determines whether the specified source is outlay.
         /// </summary>
         /// <typeparam name="T"></typeparam>
