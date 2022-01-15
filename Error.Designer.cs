@@ -5,8 +5,7 @@
 
 namespace BudgetExecution
 {
-
-    partial class Error
+    internal partial class Error
     {
         /// <summary>
         /// Required designer variable.

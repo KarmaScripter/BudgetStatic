@@ -13,7 +13,7 @@ namespace BudgetExecution
     using System.Windows.Forms;
     using Syncfusion.WinForms.Controls;
 
-    public partial class Error : SfForm
+    internal partial class Error : SfForm
     {
         /// <summary>
         /// Gets the exception.
@@ -77,7 +77,7 @@ namespace BudgetExecution
         /// Sets the text.
         /// </summary>
         /// <param name="message">The message.</param>
-        public void SetText( string message )
+        public void SetText( string message = "" )
         {
             Text = message;
         }
