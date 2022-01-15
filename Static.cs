@@ -101,7 +101,6 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Converts to logstring.
         /// </summary>
         /// <param name="ex">The ex.</param>
         /// <param name="message">The message.</param>
@@ -218,7 +217,7 @@ namespace BudgetExecution
         /// <param name="ex">The ex.</param>
         public static void Fail( Exception ex )
         {
-            using var _error = new StaticError( ex );
+            using var _error = new Error( ex );
             _error?.SetText( ex.Message );
             _error?.ShowDialog();
         }

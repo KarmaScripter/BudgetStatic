@@ -1,4 +1,4 @@
-﻿// <copyright file = "StaticError.cs" company = "Terry D. Eppler">
+﻿// <copyright file = "Error.cs" company = "Terry D. Eppler">
 // Copyright (c) Terry D. Eppler. All rights reserved.
 // </copyright>
 
@@ -13,7 +13,7 @@ namespace BudgetExecution
     using System.Windows.Forms;
     using Syncfusion.WinForms.Controls;
 
-    public partial class StaticError : SfForm
+    public partial class Error : SfForm
     {
         /// <summary>
         /// Gets the exception.
@@ -28,7 +28,7 @@ namespace BudgetExecution
         /// </summary>
         public new string Text { get; set; }
 
-        public StaticError()
+        public Error()
         {
             InitializeComponent();
 
@@ -54,20 +54,20 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="StaticError"/> class.
+        /// Initializes a new instance of the <see cref="Error"/> class.
         /// </summary>
         /// <param name="ext">The ext.</param>
-        public StaticError( Exception ext )
+        public Error( Exception ext )
         {
             InitializeComponent();
             Exception = ext;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="StaticError"/> class.
+        /// Initializes a new instance of the <see cref="Error"/> class.
         /// </summary>
         /// <param name="message">The message.</param>
-        public StaticError( string message = "" )
+        public Error( string message = "" )
         {
             InitializeComponent();
             Text = message;

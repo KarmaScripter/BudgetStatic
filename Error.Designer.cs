@@ -1,4 +1,4 @@
-﻿// // <copyright file = "StaticError.Designer.cs" company = "Terry D. Eppler">
+﻿// // <copyright file = "Error.Designer.cs" company = "Terry D. Eppler">
 // // Copyright (c) Terry D. Eppler. All rights reserved.
 // // </copyright>
 //
@@ -6,7 +6,7 @@
 namespace BudgetExecution
 {
 
-    partial class StaticError
+    partial class Error
     {
         /// <summary>
         /// Required designer variable.
@@ -37,7 +37,7 @@ namespace BudgetExecution
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size( 800, 450 );
-            this.Text = "StaticError";
+            this.Text = "Error";
         }
 
         #endregion

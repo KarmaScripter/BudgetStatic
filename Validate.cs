@@ -94,7 +94,6 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Exts the specified extension.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="extension">The extension.</param>
@@ -356,7 +355,7 @@ namespace BudgetExecution
         /// <param name="ex">The ex.</param>
         private protected static void Fail( Exception ex )
         {
-            using var _error = new StaticError( ex );
+            using var _error = new Error( ex );
             _error?.SetText( ex.Message );
             _error?.ShowDialog();
         }

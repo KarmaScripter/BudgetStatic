@@ -103,11 +103,11 @@
   <ItemGroup>
     <Compile Include="Resource.cs" />
     <Compile Include="Static.cs" />
-    <Compile Include="StaticError.cs">
+    <Compile Include="Error.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StaticError.Designer.cs">
-      <DependentUpon>StaticError.cs</DependentUpon>
+    <Compile Include="Error.Designer.cs">
+      <DependentUpon>Error.cs</DependentUpon>
     </Compile>
     <Compile Include="Validate.cs" />
     <Compile Include="Verify.cs" />
