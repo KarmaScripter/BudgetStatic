@@ -7,7 +7,7 @@ namespace BudgetExecution
     using System;
     using Syncfusion.Windows.Forms;
 
-    public partial class Message : MetroForm
+    public partial class StsticMessage : MetroForm
     {
         /// <summary>
         /// Gets the stack.
@@ -27,20 +27,20 @@ namespace BudgetExecution
 
         /// <summary>
         /// Initializes a new instance of the
-        /// <see cref="Message"/> class.
+        /// <see cref="StsticMessage"/> class.
         /// </summary>
-        public Message()
+        public StsticMessage()
         {
             InitializeComponent();
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref = "Message"/> class.
+        /// Initializes a new instance of the <see cref = "StsticMessage"/> class.
         /// </summary>
         /// <param name = "message" >
         /// The message.
         /// </param>
-        public Message( string message )
+        public StsticMessage( string message )
             : this()
         {
             Text = message;

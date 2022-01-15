@@ -10,7 +10,7 @@ namespace BudgetExecution
     using VisualPlus.Toolkit.Controls.Interactivity;
     using VisualPlus.Toolkit.Controls.Layout;
 
-    partial class StsticMessage
+    partial class Message
         {
             /// <summary>
             /// Required designer variable.
@@ -45,7 +45,7 @@ namespace BudgetExecution
                     new Syncfusion.Windows.Forms.CaptionImage();
 
                 System.ComponentModel.ComponentResourceManager resources =
-                    new System.ComponentModel.ComponentResourceManager( typeof( StsticMessage ) );
+                    new System.ComponentModel.ComponentResourceManager( typeof( Message ) );
 
                 this.BackPanel = new VisualPlus.Toolkit.Controls.Layout.VisualPanel();
                 this.FlowPanel = new System.Windows.Forms.FlowLayoutPanel();

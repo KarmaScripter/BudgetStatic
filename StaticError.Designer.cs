@@ -2,7 +2,7 @@
 
 namespace BudgetExecution
 {
-    partial class StaticError : MetroForm
+    partial class Error : MetroForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace BudgetExecution
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaticError));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Error));
             this.Info = new VisualPlus.Toolkit.Controls.Interactivity.VisualLabel();
             this.SuspendLayout();
             // 

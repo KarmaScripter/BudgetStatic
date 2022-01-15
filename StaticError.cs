@@ -6,7 +6,7 @@ namespace BudgetExecution
 {
     using System;
 
-    public partial class Error
+    public partial class StaticError
     {
         /// <summary>
         /// Gets the exception.
@@ -22,28 +22,28 @@ namespace BudgetExecution
         public new string Text { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Error"/> class.
+        /// Initializes a new instance of the <see cref="StaticError"/> class.
         /// </summary>
-        public Error()
+        public StaticError()
         {
             InitializeComponent();
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Error"/> class.
+        /// Initializes a new instance of the <see cref="StaticError"/> class.
         /// </summary>
         /// <param name="ext">The ext.</param>
-        public Error( Exception ext )
+        public StaticError( Exception ext )
         {
             InitializeComponent();
             Exception = ext;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Error"/> class.
+        /// Initializes a new instance of the <see cref="StaticError"/> class.
         /// </summary>
         /// <param name="message">The message.</param>
-        public Error( string message = "" )
+        public StaticError( string message = "" )
         {
             InitializeComponent();
             Text = message;
