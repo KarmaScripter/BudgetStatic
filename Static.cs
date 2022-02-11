@@ -101,7 +101,6 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Converts to logstring.
         /// </summary>
         /// <param name="ex">The ex.</param>
         /// <param name="message">The message.</param>

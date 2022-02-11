@@ -94,7 +94,6 @@ namespace BudgetExecution
         }
 
         /// <summary>
-        /// Exts the specified extension.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="extension">The extension.</param>
