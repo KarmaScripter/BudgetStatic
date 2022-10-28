@@ -168,7 +168,7 @@ namespace BudgetExecution
             Source.AppropriationDocuments,
             Source.BudgetDocuments,
             Source.BudgetControls,
-            Source.CarryoverBalances,
+            Source.CarryoverApportionments,
             Source.CarryoverSurvey,
             Source.FullTimeEquivalents,
             Source.HeadquartersAuthority,
@@ -201,7 +201,6 @@ namespace BudgetExecution
             Source.DocumentControlNumbers,
             Source.ProjectCostCodes,
             Source.SiteProjectCodes,
-            Source.SF133
         };
 
         /// <summary>
@@ -237,7 +236,7 @@ namespace BudgetExecution
         /// <summary>
         /// The image resources
         /// </summary>
-        public static readonly string[ ] ImageResources = Enum.GetNames( typeof( ImageSource ) );
+        public static readonly string[ ] ImageResources = Enum.GetNames( typeof( ImageDirectory ) );
 
         /// <summary>
         /// The charts
@@ -247,6 +246,6 @@ namespace BudgetExecution
         /// <summary>
         /// The tools
         /// </summary>
-        public static readonly string[ ] Tools = Enum.GetNames( typeof( Tool ) );
+        public static readonly string[ ] Tools = Enum.GetNames( typeof( ToolType ) );
     }
 }
