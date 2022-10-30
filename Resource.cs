@@ -15,7 +15,9 @@ namespace BudgetExecution
         /// <summary>
         /// The summary
         /// </summary>
-        public static string Summary = AppSettings[ "SummaryImages" ];
+        public static string Summary = !string.IsNullOrEmpty( AppSettings[ "SummaryImages" ] )
+            ? AppSettings[ "SummaryImages" ]
+            : string.Empty;
 
         /// <summary>
         /// The fund images
@@ -111,141 +113,5 @@ namespace BudgetExecution
         /// The tool bar images
         /// </summary>
         public static readonly string ToolBarImages = AppSettings[ "ToolBarImages" ];
-
-        /// <summary>
-        /// The object class sources
-        /// </summary>
-        public static readonly Source[ ] ObjectClassSources =
-        {
-            Source.FullTimeEquivalents,
-            Source.PayrollAuthority
-        };
-
-        /// <summary>
-        /// The chart types
-        /// </summary>
-        public static readonly string[ ] ChartTypes = Enum.GetNames( typeof( ChartType ) );
-
-        /// <summary>
-        /// The reference sources
-        /// </summary>
-        public static readonly Source[ ] ReferenceSources =
-        {
-            Source.Accounts,
-            Source.AccountingEvents,
-            Source.ActivityCodes,
-            Source.AllowanceHolders,
-            Source.Appropriations,
-            Source.BudgetObjectClasses,
-            Source.CostAreas,
-            Source.FinanceObjectClasses,
-            Source.Funds,
-            Source.Goals,
-            Source.HumanResourceOrganizations,
-            Source.NationalPrograms,
-            Source.Objectives,
-            Source.Organizations,
-            Source.ResourcePlanningOffices,
-            Source.ProgramAreas,
-            Source.Projects,
-            Source.ProgramProjects,
-            Source.ProgramDescriptions,
-            Source.Providers,
-            Source.ResponsibilityCenters,
-            Source.InformationTechnology,
-            Source.WorkCodes,
-            Source.FiscalYears,
-            Source.AppropriationBills
-        };
-
-        /// <summary>
-        /// The authority sources
-        /// </summary>
-        public static readonly Source[ ] AuthoritySources =
-        {
-            Source.Allocations,
-            Source.Apportionments,
-            Source.AppropriationDocuments,
-            Source.BudgetDocuments,
-            Source.BudgetControls,
-            Source.CarryoverApportionments,
-            Source.CarryoverSurvey,
-            Source.FullTimeEquivalents,
-            Source.HeadquartersAuthority,
-            Source.PayrollAuthority,
-            Source.RegionalAuthority,
-            Source.Reprogrammings,
-            Source.ReimbursableAgreements,
-            Source.ReimbursableFunds,
-            Source.ReimbursableSurvey,
-            Source.SuperfundSites,
-            Source.SpecialAccounts,
-            Source.Transfers
-        };
-
-        /// <summary>
-        /// The obligation sources
-        /// </summary>
-        public static readonly Source[ ] ObligationSources =
-        {
-            Source.BudgetOutlays,
-            Source.CarryoverOutlays,
-            Source.MonthlyOutlays,
-            Source.ProjectCostCodes,
-            Source.TravelActivity,
-            Source.PayrollCostCodes,
-            Source.PayrollActivity,
-            Source.Obligations,
-            Source.Deobligations,
-            Source.SiteActivity,
-            Source.DocumentControlNumbers,
-            Source.ProjectCostCodes,
-            Source.SiteProjectCodes,
-        };
-
-        /// <summary>
-        /// The sources
-        /// </summary>
-        public static readonly string[ ] Sources = Enum.GetNames( typeof( Source ) );
-
-        /// <summary>
-        /// The providers
-        /// </summary>
-        public static readonly string[ ] Providers = Enum.GetNames( typeof( Provider ) );
-
-        /// <summary>
-        /// The fields
-        /// </summary>
-        public static readonly string[ ] Fields = Enum.GetNames( typeof( Field ) );
-
-        /// <summary>
-        /// The numerics
-        /// </summary>
-        public static readonly string[ ] Numerics = Enum.GetNames( typeof( Numeric ) );
-
-        /// <summary>
-        /// The primary keys
-        /// </summary>
-        public static readonly string[ ] PrimaryKeys = Enum.GetNames( typeof( PrimaryKey ) );
-
-        /// <summary>
-        /// The extensions
-        /// </summary>
-        public static readonly string[ ] Extensions = Enum.GetNames( typeof( EXT ) );
-
-        /// <summary>
-        /// The image resources
-        /// </summary>
-        public static readonly string[ ] ImageResources = Enum.GetNames( typeof( ImageDirectory ) );
-
-        /// <summary>
-        /// The charts
-        /// </summary>
-        public static readonly string[ ] Charts = Enum.GetNames( typeof( ChartType ) );
-
-        /// <summary>
-        /// The tools
-        /// </summary>
-        public static readonly string[ ] Tools = Enum.GetNames( typeof( ToolType ) );
     }
 }

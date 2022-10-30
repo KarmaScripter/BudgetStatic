@@ -1,5 +1,5 @@
-﻿// <copyright file = "Static.cs" company = "Terry D. Eppler">
-// Copyright (c) Terry D. Eppler. All rights reserved.
+﻿// <copyright file=" <File Name> .cs" company="Terry D. Eppler">
+// Copyright (c) Terry Eppler. All rights reserved.
 // </copyright>
 
 namespace BudgetExecution
@@ -32,7 +32,6 @@ namespace BudgetExecution
             try
             {
                 type = Nullable.GetUnderlyingType( type ) ?? type;
-
                 return type.Name switch
                 {
                     "String" or "Boolean" => "Text",
@@ -45,7 +44,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( string );
+                return default;
             }
         }
 
@@ -60,22 +59,24 @@ namespace BudgetExecution
         {
             try
             {
-                if( connection == null )
+                if( !string.IsNullOrEmpty( sql ) )
                 {
-                    throw new ArgumentNullException( nameof( connection ) );
+                    var _command = connection?.CreateCommand( );
+                    if ( _command != null )
+                    {
+                        _command.CommandText = sql;
+                        return ( !string.IsNullOrEmpty( _command?.CommandText ) )
+                            ? _command
+                            : default;
+                    }
                 }
 
-                var _command = connection?.CreateCommand();
-                _command.CommandText = sql;
-
-                return !string.IsNullOrEmpty( _command?.CommandText )
-                    ? _command
-                    : default( IDbCommand );
+                return default;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IDbCommand );
+                return default;
             }
         }
 
@@ -90,13 +91,12 @@ namespace BudgetExecution
             try
             {
                 using var _command = connection?.CreateCommand( sql );
-                
-                return _command?.ExecuteNonQuery() ?? 0;
+                return _command?.ExecuteNonQuery( ) ?? 0;
             }
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( int );
+                return default;
             }
         }
 
@@ -109,7 +109,7 @@ namespace BudgetExecution
         {
             try
             {
-                var _stringBuilder = new StringBuilder();
+                var _stringBuilder = new StringBuilder( );
 
                 if( !string.IsNullOrEmpty( message ) )
                 {
@@ -164,22 +164,22 @@ namespace BudgetExecution
                         _stringBuilder.Append( Environment.NewLine );
                     }
 
-                    var _baseException = ex.GetBaseException();
+                    var _baseException = ex.GetBaseException( );
 
                     if( _baseException != null )
                     {
                         _stringBuilder.Append( "BaseException:" );
                         _stringBuilder.Append( Environment.NewLine );
-                        _stringBuilder.Append( ex.GetBaseException() );
+                        _stringBuilder.Append( ex.GetBaseException( ) );
                     }
                 }
 
-                return _stringBuilder.ToString();
+                return _stringBuilder.ToString( );
             }
             catch( Exception e )
             {
                 Fail( e );
-                return default( string );
+                return default;
             }
         }
 
@@ -192,7 +192,7 @@ namespace BudgetExecution
         {
             try
             {
-                var _dictionary = new Dictionary<string, object>();
+                var _dictionary = new Dictionary<string, object>( );
 
                 if( nvm != null )
                 {
@@ -207,7 +207,7 @@ namespace BudgetExecution
             catch( Exception ex )
             {
                 Fail( ex );
-                return default( IDictionary<string, object> );
+                return default;
             }
         }
 
@@ -219,7 +219,7 @@ namespace BudgetExecution
         {
             using var _error = new Error( ex );
             _error?.SetText( ex.Message );
-            _error?.ShowDialog();
+            _error?.ShowDialog( );
         }
     }
 }
